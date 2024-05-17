@@ -6,11 +6,9 @@ phases:
       python: 3.8
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt
   build:
     commands:
       - echo "Building project..."
-      - python build.py
   post_build:
     commands:
       - echo "Running post-build steps..."
