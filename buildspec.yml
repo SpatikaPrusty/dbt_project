@@ -5,9 +5,9 @@
 #     DBT_TARGET: 'dev'
 #     DBT_DEV_HOST: 'localhost'
 #     DBT_DEV_PORT: 5432
-#     DBT_DEV_USER: 'postgres'
+#     DBT_DEV_USER: 'spatika'
 #     DBT_DEV_PASSWORD: 'lumiq121@'
-#     DBT_DEV_DBNAME: 'testdb'
+#     DBT_DEV_DBNAME: 'spatika'
 #     DBT_DEV_SCHEMA: 'public'
 
 # phases:
