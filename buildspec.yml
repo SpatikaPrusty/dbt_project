@@ -1,12 +1,18 @@
 version: 0.2
 
+env:
+  variables:
+    DBT_TARGET: dev  # Set this to the appropriate target for your dbt project
+
 phases:
   install:
     runtime-versions:
       python: 3.8
     commands:
-      - pip install dbt-postgres
+      - echo Logging in to Docker Hub...
+      - echo "lumiq121@" | docker login --username "spatika123" --password-stdin
       - docker pull postgres
+      - pip install dbt-postgres
   pre_build:
     commands:
       - echo Running postgres container
