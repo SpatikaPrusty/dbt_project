@@ -1,13 +1,17 @@
 version: 0.2
 
+env:
+  variables:
+    DBT_TARGET: 'dev'
+
 phases:
   install:
     runtime-versions:
       python: 3.8
     commands:
       - echo "Installing dependencies..."
-      - pip install dbt-core dbt-postgres  # Adjust this line based on your specific dbt adapter
+      - pip install dbt-core dbt-postgres  
   build:
     commands:
       - echo "Building project..."
-      - dbt debug  # This runs the dbt debug command to check the setup
+      - dbt debug  
