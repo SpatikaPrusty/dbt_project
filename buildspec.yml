@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - pip install dbt-postgres
       - docker pull postgres
   pre_build:
     commands:
@@ -12,12 +13,12 @@ phases:
       - docker run --rm --name postgres_database -p 5432:5432 -e POSTGRES_PASSWORD=lumiq121@ -d postgres
   build:
     commands:
+      - echo Running dbt debug
       - dbt debug
   post_build:
     commands:
       - echo Stopping postgres container
       - docker container stop postgres_database
-
 
 
 # version: 0.2
