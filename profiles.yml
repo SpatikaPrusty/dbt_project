@@ -3,7 +3,7 @@ test1:
     dev:
       type: postgres
       threads: 1
-      host: "{{ env_var('DBT_DEV_HOST') | int }}"
+      host: "{{ env_var('DBT_DEV_HOST') }}"
       port: "{{ env_var('DBT_DEV_PORT') | int }}"
       user: "{{ env_var('DBT_DEV_USER') }}"
       pass: "{{ env_var('DBT_DEV_PASSWORD') }}"
@@ -13,7 +13,7 @@ test1:
     prod:
       type: postgres
       threads: 1
-      host: "{{ env_var('DBT_PROD_HOST') | int }}"
+      host: "{{ env_var('DBT_PROD_HOST') }}"
       port: "{{ env_var('DBT_PROD_PORT') | int }}"
       user: "{{ env_var('DBT_PROD_USER') }}"
       pass: "{{ env_var('DBT_PROD_PASSWORD') }}"
