@@ -2,7 +2,13 @@ version: 0.2
 
 env:
   variables:
-    DBT_TARGET: dev  # Set this to the appropriate target for your dbt project
+    DBT_TARGET: 'dev'
+    DBT_DEV_HOST: 'localhost'
+    DBT_DEV_PORT: 5432
+    DBT_DEV_USER: 'postgres'
+    DBT_DEV_PASSWORD: 'lumiq121@'
+    DBT_DEV_DBNAME: 'testdb'
+    DBT_DEV_SCHEMA: 'public'
 
 phases:
   install:
