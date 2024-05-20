@@ -1,23 +1,47 @@
 version: 0.2
 
-env:
-  variables:
-    DBT_TARGET: 'dev'
-    DBT_DEV_HOST: 'localhost'
-    DBT_DEV_PORT: 5432
-    DBT_DEV_USER: 'postgres'
-    DBT_DEV_PASSWORD: 'lumiq121@'
-    DBT_DEV_DBNAME: 'testdb'
-    DBT_DEV_SCHEMA: 'public'
-
 phases:
   install:
     runtime-versions:
       python: 3.8
     commands:
-      - echo "Installing dependencies..."
-      - pip install dbt-core dbt-postgres  # Adjust this line based on your specific dbt adapter
+      - docker pull postgres
+  pre_build:
+    commands:
+      - echo Running postgres container
+      - docker run --rm --name postgres_database -p 5432:5432 -e POSTGRES_PASSWORD=lumiq121@ -d postgres
   build:
     commands:
-      - echo "Building project..."
-      - dbt debug  # This runs the dbt debug command to check the setup
+      - dbt debug
+  post_build:
+    commands:
+      - echo Stopping postgres container
+      - docker container stop postgres_database
+
+
+
+# version: 0.2
+
+# env:
+#   variables:
+#     DBT_TARGET: 'dev'
+#     DBT_DEV_HOST: 'localhost'
+#     DBT_DEV_PORT: 5432
+#     DBT_DEV_USER: 'postgres'
+#     DBT_DEV_PASSWORD: 'lumiq121@'
+#     DBT_DEV_DBNAME: 'testdb'
+#     DBT_DEV_SCHEMA: 'public'
+
+# phases:
+#   install:
+#     runtime-versions:
+#       python: 3.8
+#     commands:
+#       - echo "Installing dependencies..."
+#       - pip install dbt-core dbt-postgres
+#       - WORKDIR /usr/app
+#       - COPY . .
+#   build:
+#     commands:
+#       - echo "Building project..."
+#       - dbt debug  
