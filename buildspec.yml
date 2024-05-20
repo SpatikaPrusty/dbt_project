@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     DBT_TARGET: 'dev'
-    DBT_DEV_HOST: '10.101.4.94'
+    DBT_DEV_HOST: 'localhost'
     DBT_DEV_PORT: 5432
     DBT_DEV_USER: 'postgres'
     DBT_DEV_PASSWORD: 'lumiq121@'
