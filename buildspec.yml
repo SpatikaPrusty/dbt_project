@@ -1,48 +1,14 @@
-# version: 0.2
-
-# env:
-#   parameter-store:
-#     DBT_TARGET: '/dbt/target'
-#     DBT_DEV_HOST: '/dbt/dev/host'
-#     DBT_DEV_PORT: '/dbt/dev/port'
-#     DBT_DEV_USER: '/dbt/dev/user'
-#     DBT_DEV_PASSWORD: '/dbt/dev/password'
-#     DBT_DEV_DBNAME: '/dbt/dev/dbname'
-#     DBT_DEV_SCHEMA: '/dbt/dev/schema'
-#     DOCKER_USERNAME: '/docker/username'
-#     DOCKER_PASSWORD: '/docker/password'
-
-# phases:
-#   install:
-#     runtime-versions:
-#       python: 3.8
-#     commands:
-#       - echo "Installing dependencies..."
-#       - pip install dbt-core dbt-postgres
-#       - echo "Logging in to Docker Hub..."
-#       - echo "lumiq121@" | docker login -u "spatika123" --password-stdin
-
-#   build:
-#     commands:
-#       - echo "Building project..."
-#       - dbt debug
-#       - echo "Building Docker image..."
-#       - docker build -t spatika123/dbt-project-image:latest .
-#       - docker push spatika123/dbt-project-image:latest
-
-
-
 version: 0.2
 
-env:
-  variables:
-    DBT_TARGET: 'dev'
-    DBT_DEV_HOST: 'empower-pryzm-rds.cepsv5f9ayrr.ap-south-1.rds.amazonaws.com'
-    DBT_DEV_PORT: 25432
-    DBT_DEV_USER: 'spatika'
-    DBT_DEV_PASSWORD: 'lumiq121@'
-    DBT_DEV_DBNAME: 'spatika'
-    DBT_DEV_SCHEMA: 'public'
+# env:
+#   variables:
+#     DBT_TARGET: 'dev'
+#     DBT_DEV_HOST: 'empower-pryzm-rds.cepsv5f9ayrr.ap-south-1.rds.amazonaws.com'
+#     DBT_DEV_PORT: 25432
+#     DBT_DEV_USER: 'spatika'
+#     DBT_DEV_PASSWORD: 'lumiq121@'
+#     DBT_DEV_DBNAME: 'spatika'
+#     DBT_DEV_SCHEMA: 'public'
 
 phases:
   install:
