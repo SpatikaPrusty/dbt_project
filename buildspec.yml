@@ -17,6 +17,7 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - pip install dbt-core dbt-postgres
+      - amazon-linux-extras install postgresql10
 
   build:
     commands:
