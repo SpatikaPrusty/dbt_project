@@ -1,15 +1,5 @@
 version: 0.2
 
-# env:
-#   variables:
-#     DBT_TARGET: 'dev'
-#     DBT_DEV_HOST: 'empower-pryzm-rds.cepsv5f9ayrr.ap-south-1.rds.amazonaws.com'
-#     DBT_DEV_PORT: 25432
-#     DBT_DEV_USER: 'spatika'
-#     DBT_DEV_PASSWORD: 'lumiq121@'
-#     DBT_DEV_DBNAME: 'spatika'
-#     DBT_DEV_SCHEMA: 'public'
-
 phases:
   install:
     runtime-versions:
