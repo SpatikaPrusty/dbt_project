@@ -1,38 +1,3 @@
-# version: 0.2
-
-# env:
-#   variables:
-#     DBT_TARGET: 'dev'
-#     DBT_DEV_HOST: 'localhost'
-#     DBT_DEV_PORT: 5432
-#     DBT_DEV_USER: 'spatika'
-#     DBT_DEV_PASSWORD: 'lumiq121@'
-#     DBT_DEV_DBNAME: 'spatika'
-#     DBT_DEV_SCHEMA: 'public'
-
-# phases:
-#   install:
-#     runtime-versions:
-#       python: 3.8
-#     commands:
-#       - echo Logging in to Docker Hub...
-#       - echo "lumiq121@" | docker login --username "spatika123" --password-stdin
-#       - docker pull postgres
-#       - pip install dbt-postgres
-#   pre_build:
-#     commands:
-#       - echo Running postgres container
-#       - docker run --rm --name postgres_database -p 5432:5432 -e POSTGRES_PASSWORD=lumiq121@ -d postgres
-#   build:
-#     commands:
-#       - echo Running dbt debug
-#       - dbt debug
-#   post_build:
-#     commands:
-#       - echo Stopping postgres container
-#       - docker container stop postgres_database
-
-
 version: 0.2
 
 env:
