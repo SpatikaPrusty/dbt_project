@@ -16,11 +16,14 @@ phases:
       python: 3.8
     commands:
       - echo "Installing dependencies..."
-      - yum -y update
-      - yum install -y postgresql10 postgresql10-devel
       - pip install dbt-core dbt-postgres
+      - echo "Logging in to Docker Hub..."
+      - echo "lumiq121@" | docker login -u "spatika123" --password-stdin
 
   build:
     commands:
       - echo "Building project..."
-      - dbt debug  
+      - dbt debug
+      - echo "Building Docker image..."
+      - docker build -t spatika123/dbt-project-image:latest .
+      - docker push spatika123/dbt-project-image:latest
