@@ -16,8 +16,10 @@ phases:
       python: 3.8
     commands:
       - echo "Installing dependencies..."
+      - yum -y update
+      - yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      - yum install -y postgresql10
       - pip install dbt-core dbt-postgres
-      - amazon-linux-extras install postgresql10
 
   build:
     commands:
